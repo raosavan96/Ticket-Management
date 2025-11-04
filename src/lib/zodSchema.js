@@ -1,7 +1,7 @@
 import { z } from "zod";
 
 export const zodSchema = z.object({
-  "contactName": z
+  contactName: z
     .string()
     .min(2, { message: "Contact Name must be at least 2 characters." })
     .max(50, { message: "Contact Name must be at most 50 characters." })
@@ -9,7 +9,7 @@ export const zodSchema = z.object({
       message: "Contact Name must contain only letters and spaces.",
     }),
 
-  "accountName": z
+  accountName: z
     .string()
     .min(2, { message: "Account Name must be at least 2 characters." })
     .max(50, { message: "Account Name must be at most 50 characters." }),

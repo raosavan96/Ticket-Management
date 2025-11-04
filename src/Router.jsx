@@ -5,6 +5,9 @@ import Loading from "./components/ui/application/Loading";
 const App = lazy(() => import("./App"));
 const Tickets = lazy(() => import("./pages/tickets/Tickets"));
 const AddTicket = lazy(() => import("./pages/tickets/AddTicket"));
+const View = lazy(() => import("./pages/tickets/ticketPage/View"));
+const HqPage = lazy(() => import("./pages/tickets/ticketPage/HqPage"));
+const DraggableTextBox = lazy(() => import("./pages/draggableTextBox/DraggableTextBox"));
 
 const Router = () => {
   const appRouter = createBrowserRouter([
@@ -29,6 +32,30 @@ const Router = () => {
               element: (
                 <Suspense fallback={<Loading name={'Add Ticket'}/>}>
                   <AddTicket />
+                </Suspense>
+              ),
+            },
+            {
+              path: "view",
+              element: (
+                <Suspense fallback={<Loading name={'Add Ticket'}/>}>
+                  <View />
+                </Suspense>
+              ),
+            },
+            {
+              path: "",
+              element: (
+                <Suspense fallback={<Loading name={'Add Ticket'}/>}>
+                  <HqPage />
+                </Suspense>
+              ),
+            },
+            {
+              path: "drag-box",
+              element: (
+                <Suspense fallback={<Loading name={'Add Ticket'}/>}>
+                  <DraggableTextBox />
                 </Suspense>
               ),
             },

@@ -21,10 +21,24 @@ import RelatedDetails from "@/components/ui/application/relatedDetails/RelatedDe
 import ButtonLoading from "@/components/ui/application/ButtonLoading";
 
 const AddTicket = () => {
-  const [statusOptions, setStatusOptions] = useState([{
-    label: 'Active',
-    value: 'active',
-  }]);
+  const [statusOptions, setStatusOptions] = useState([
+    {
+    label: 'Acdtive',
+    value: 'dactive',
+  }, 
+  {
+    label: 'Acftive',
+    value: 'gactive',
+  },
+  {
+    label: 'Acwtive',
+    value: 'eactive',
+  },
+  {
+    label: 'Acttive',
+    value: 'tactive',
+  }
+  ]);
   const [TicketOwnerOptions, setTicketOwnerOptions] = useState([{
     label: 'Active',
     value: 'active',
@@ -202,7 +216,7 @@ const AddTicket = () => {
                                 options={statusOptions}
                                 selected={field.value}
                                 setSelected={field.onChange}
-                                isMulti={false}
+                                isMulti={true}
                                 mainStyle={mainStyle}
                               />
                             </FormControl>
@@ -226,7 +240,7 @@ const AddTicket = () => {
                                 options={TicketOwnerOptions}
                                 selected={field.value}
                                 setSelected={field.onChange}
-                                isMulti={false}
+                                isMulti={true}
                                 mainStyle={mainStyle}
                               />
                             </FormControl>
@@ -252,7 +266,7 @@ const AddTicket = () => {
                         label="Due Date"
                         isRequire
                         placeholder="Select due date"
-                        mode="single"
+                        mode="range"
                         mainStyle={mainStyle}
                       />
                     </div>
